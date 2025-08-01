@@ -21,10 +21,6 @@
         "url": "https://github.com/tanosshi/Cuphead-Decomp"
       },
       {
-        "name": "CINERIS SOMNIA Decompilation",
-        "url": "https://github.com/tanosshi/CINERIS-SOMNIA-Decomp"
-      },
-      {
         "name": "Yandere Simulator Decompilation",
         "url": "https://github.com/tanosshi/YanSimAndroid"
       }
@@ -39,9 +35,17 @@
         "url": "../project/player"
       },
       {
+        "name": "iOSFox (Firefox Extension)",
+        "url": "https://github.com/tanosshi/iOSFox"
+      },
+      {
         "name": "rei (prev; project fps fixer)",
         "url": "https://github.com/tanosshi/rei",
         "class": "nonquality"
+      },
+      {
+        "name": "unyapify API",
+        "url": "https://github.com/tanosshi/unyapify"
       },
       {
         "name": "Nanobot Base",
@@ -58,6 +62,21 @@
         "class": "nonquality"
       },
       { "name": "QR code generator", "url": "../qr" }
+    ]
+  },
+  {
+    "category": "FORKS",
+    "projects": [
+      {
+        "name": "More features for Xbox Rich Presence",
+        "url": "https://github.com/tanosshi/Xbox-Rich-Presence-Discord",
+        "class": "nonquality"
+      },
+      {
+        "name": "More displays support for Rounded Windows Edges",
+        "url": "https://github.com/tanosshi/rounded-windows-edges",
+        "class": "nonquality"
+      }
     ]
   },
   {
@@ -112,51 +131,21 @@
     ]
   },
   {
-    "category": "OLD ARCHIVED GAMES",
+    "category": "OLD ARCHIVED GAME",
     "projects": [
       {
         "name": "(a) Rhythm game done right (crazily broken, bpm unfixed, old version) ⭐",
-        "url": "../files/rgdr"
-      },
-      {
-        "name": "survive (debug v0.3, broken, old version, assets are placeholders)",
-        "url": "../files/survive",
-        "class": "nonquality"
-      },
-      {
-        "name": "project dive (2 versions, rhythm game)",
-        "url": "../files/projectdive/",
+        "url": "../files/rgdr",
         "class": "nonquality"
       }
     ]
   },
   {
-    "category": "2021/2022 ARCHIVED NETLIFY PAGES (BROKEN AND DEPRECATED)",
+    "category": "PROBABLY PRIVATED",
     "projects": [
       {
-        "name": "1ll3g4l",
-        "url": "https://1ll3g4l.netlify.app/",
-        "class": "nonquality"
-      },
-      {
-        "name": "ip-information",
-        "url": "https://ip-information.netlify.app/",
-        "class": "nonquality"
-      },
-      {
-        "name": "better-docs",
-        "url": "https://better-docs.netlify.app/",
-        "class": "nonquality"
-      },
-      {
-        "name": "tanos, the home page (late 2022)",
-        "url": "https://taanos.netlify.app/",
-        "class": "nonquality"
-      },
-      {
-        "name": "nano2go (before early 2023 launch)",
-        "url": "http://nano2go.vercel.app/",
-        "class": "nonquality"
+        "name": "Akatsuki, The easiest and most readable minecraft cheat made in C++ ",
+        "url": "https://github.com/tanosshi/Akatsuki"
       }
     ]
   }

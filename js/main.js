@@ -594,8 +594,6 @@ function updateLastFM(additional) {
                 "and you dont seem to understand",
                 "sleeeeppyyy",
                 "ahaaaaaaaaaaaa",
-                "meow meow",
-                "meeoooooow",
                 "there might a surprise here https://www.youtube.com/watch?v=xvFZjo5PgG0",
               ];
               document.getElementById("playsngenreFm").innerHTML = `${
@@ -765,8 +763,6 @@ function updateLastFM(additional) {
                     "∙ tanos is in love with this one",
                     "∙ hearted by tanos",
                     "∙ yessssssssssssssssssss",
-                    "∙ yesssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-                    "∙ yesssssssssssssssssssssssssssssssssssssssssssssssssssssss",
                     "∙ marked as loved by tanos",
                   ];
                   var informantSentences = [
