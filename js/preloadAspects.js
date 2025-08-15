@@ -15,9 +15,8 @@ function preloadProjects() {
       h3.id = "projectid";
 
       container.appendChild(h3);
-      alert(
-        "projects.json failed to load, this page most likely seems to be outdated."
-      );
+      document.getElementById("projectstext").innerHTML =
+        "loading is taking a quite long time...";
     }
   }, 2000);
 }

@@ -31,10 +31,6 @@
     "projects": [
       { "name": "weather", "url": "../project/weather" },
       {
-        "name": "Music Player",
-        "url": "../project/player"
-      },
-      {
         "name": "iOSFox (Firefox Extension)",
         "url": "https://github.com/tanosshi/iOSFox"
       },
@@ -92,6 +88,10 @@
   {
     "category": "BROKEN, DROPPED OR USELESS",
     "projects": [
+      {
+        "name": "Music Player",
+        "url": "../project/player"
+      },
       {
         "name": "Contact tanos",
         "url": "../project/contact/",

@@ -1646,3 +1646,15 @@ pre > a {
   justify-content: center;
   pointer-events: none;
 }
+
+@media (max-width: 560px) {
+  #pp > button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #pp > button {
+    font-size: 0.9rem;
+  }
+}

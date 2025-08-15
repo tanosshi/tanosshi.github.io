@@ -54,6 +54,8 @@ var preloaded = 0;
 
 function loadProjects(projectData, noclear) {
   const container = document.getElementById("pp");
+  document.getElementById("projectstext").innerHTML =
+    "some sites are corrupted<br> due to change from tanos.gq";
   if (!noclear) container.innerHTML = "";
 
   projectData.forEach((section) => {
@@ -108,6 +110,8 @@ function fetchProjectswithFailDetection(url1, url2, noclear) {
         })
         .catch((err) => {
           console.error("Failed to load both files:", err);
+          document.getElementById("projectstext").innnerHTML =
+            "loading has quite failed, refresh the page to try again.";
         });
     });
 }
@@ -837,7 +841,7 @@ function updateLastFM(additional) {
                   if (show_paypal)
                     document.getElementById(
                       "doonat"
-                    ).innerHTML = `donations accepted via <a href="https://www.paypal.com/paypalme/tanospaypal" style="cursor:pointer;" onclick="window.location = 'https://www.paypal.com/paypalme/tanospaypal'">paypal</a>`;
+                    ).innerHTML = `donations accepted via paypal`;
                 },
               }
             );
