@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tanos.fm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: nfont;
+            src: url(../css/fonts/SFProDisplay-Regular.ttf);
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+        }
+
+        iframe {
+            border: none;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+
+        .demo-banner {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-family: nfont, sans-serif;
+            z-index: 1000;
+            opacity: 0.92;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-banner">
+        THIS IS ONLY AN UI DEMO, THE REAL THING ISN'T OUT YET, CHECK OUT THE <a
+            onclick="window.location.href='https://github.com/tanosshi/tanos.fm'">GITHUB REPO</a> TO RUN IT YOURSELF
+    </div>
+    <iframe src="https://moonlit-malasada-a5e63c.netlify.app/" title="tanos.fm"></iframe>
+</body>
+
+</html>
