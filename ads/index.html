@@ -1,305 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sample Website with Multiple Pages</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .nav h1 {
+        font-size: 1.8rem;
+        font-weight: 300;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .section h2 {
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 0.5rem;
+      }
+
+      .section h3 {
+        color: #764ba2;
+        margin: 1.5rem 0 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      .section p {
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 300;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .card {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+      }
+
+      .card h4 {
+        color: #667eea;
+        margin-bottom: 1rem;
+      }
+
+      .footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+      }
+
+      @media (max-width: 768px) {
         .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
+          flex-direction: column;
+          gap: 1rem;
         }
-        
-        .nav h1 {
-            font-size: 1.8rem;
-            font-weight: 300;
-        }
-        
+
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+          flex-wrap: wrap;
+          justify-content: center;
         }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section h3 {
-            color: #764ba2;
-            margin: 1.5rem 0 1rem 0;
-            font-size: 1.5rem;
-        }
-        
-        .section p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 10px;
-            margin-bottom: 3rem;
-        }
-        
+
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
+          font-size: 2rem;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .card h4 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-        
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
+      }
     </style>
-    <script type='text/javascript' src='//pl27467486.profitableratecpm.com/f0/62/bd/f062bd8b96fdc5487e58230e11aaae41.js'></script>
-</head>
-<body>
+    <script
+      type="text/javascript"
+      src="//pl27467486.profitableratecpm.com/f0/62/bd/f062bd8b96fdc5487e58230e11aaae41.js"
+    ></script>
+    <script
+      async="async"
+      data-cfasync="false"
+      src="//pl27467524.profitableratecpm.com/0f16e6f002b86848da701fe4509e73d3/invoke.js"
+    ></script>
+    <div id="container-0f16e6f002b86848da701fe4509e73d3"></div>
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <h1>Sample Website</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="nav">
+        <h1>Sample Website</h1>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="main-content">
-        <section id="home" class="hero">
-            <h1>i generated this with ai</h1>
-            <p>im putting ads on this shit</p>
-            <button>keep clicking me</button>
-        </section>
+      <section id="home" class="hero">
+        <h1>i generated this with ai</h1>
+        <p>
+          im putting ads on this shit dont download shit im not controllking
+          what you get
+        </p>
+        <button>
+          keep clicking me (youll get an ad sometimes idk dont spam it it doesnt
+          do shit anyway
+        </button>
+      </section>
 
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            
-            <h3>Our Mission</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <h3>Our Values</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h4>Innovation</h4>
-                    <p>We constantly push boundaries and explore new possibilities in everything we do.</p>
-                </div>
-                <div class="card">
-                    <h4>Quality</h4>
-                    <p>Every project we undertake is executed with the highest standards of excellence.</p>
-                </div>
-                <div class="card">
-                    <h4>Integrity</h4>
-                    <p>We maintain the highest ethical standards in all our business relationships.</p>
-                </div>
-            </div>
-        </section>
+      <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+          <a
+            href="https://www.profitableratecpm.com/da61hh40?key=5d64c5a2f7ea56e99d7d8a4afed0cbcb"
+            >click me or som shit idk</a
+          >
+        </p>
 
-        <section id="services" class="section">
-            <h2>Our Services</h2>
-            <p>We offer a comprehensive range of services designed to meet the diverse needs of our clients. Our team of experts is dedicated to delivering exceptional results that exceed expectations.</p>
-            
-            <h3>Web Development</h3>
-            <p>Our web development services encompass everything from simple static websites to complex web applications. We use cutting-edge technologies and follow industry best practices to create responsive, user-friendly, and scalable solutions.</p>
-            
-            <h3>Mobile App Development</h3>
-            <p>We specialize in creating native and cross-platform mobile applications for iOS and Android. Our mobile solutions are designed with user experience in mind, ensuring intuitive navigation and seamless functionality across all devices.</p>
-            
-            <h3>Digital Marketing</h3>
-            <p>Our digital marketing strategies help businesses increase their online presence and reach their target audience effectively. We offer SEO optimization, social media management, content marketing, and PPC advertising services.</p>
-            
-            <h3>UI/UX Design</h3>
-            <p>We create beautiful and functional user interfaces that enhance user experience and drive engagement. Our design process focuses on understanding user needs and creating intuitive, accessible, and visually appealing designs.</p>
-        </section>
+        <script type="text/javascript">
+          atOptions = {
+            key: "15e3f9366eaf0cc1179f8905866498d6",
+            format: "iframe",
+            height: 90,
+            width: 728,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//www.highperformanceformat.com/15e3f9366eaf0cc1179f8905866498d6/invoke.js"
+        ></script>
 
-        <section id="portfolio" class="section">
-            <h2>Portfolio</h2>
-            <p>Explore our diverse portfolio of successful projects that showcase our expertise and creativity. Each project represents our commitment to excellence and innovation.</p>
-            
-            <h3>Featured Projects</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>E-commerce Platform</h4>
-                    <p>A comprehensive online shopping platform with advanced features including inventory management, payment processing, and customer analytics.</p>
-                </div>
-                <div class="card">
-                    <h4>Healthcare Management System</h4>
-                    <p>A secure and efficient system for managing patient records, appointments, and medical billing with HIPAA compliance.</p>
-                </div>
-                <div class="card">
-                    <h4>Educational Learning Platform</h4>
-                    <p>An interactive learning management system that provides personalized education experiences for students of all ages.</p>
-                </div>
-                <div class="card">
-                    <h4>Financial Dashboard</h4>
-                    <p>A real-time financial analytics dashboard that helps businesses make informed decisions with comprehensive data visualization.</p>
-                </div>
-                <div class="card">
-                    <h4>Social Media App</h4>
-                    <p>A feature-rich social networking application with real-time messaging, content sharing, and community building tools.</p>
-                </div>
-                <div class="card">
-                    <h4>Inventory Management System</h4>
-                    <p>An automated inventory tracking system that optimizes stock levels and reduces operational costs for retail businesses.</p>
-                </div>
-            </div>
-        </section>
+        <h3>Our Mission</h3>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+        <div id="container-0f16e6f002b86848da701fe4509e73d3"></div>
 
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Ready to start your next project? Get in touch with us today to discuss your requirements and learn how we can help bring your vision to life.</p>
-            
-            <h3>Get In Touch</h3>
-            <p>We're here to help and answer any questions you might have. We look forward to hearing from you and would love to discuss how we can work together to achieve your goals.</p>
-            
-            <h3>Contact Information</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Email</h4>
-                    <p>info@samplewebsite.com</p>
-                </div>
-                <div class="card">
-                    <h4>Phone</h4>
-                    <p>+1 (555) 123-4567</p>
-                </div>
-                <div class="card">
-                    <h4>Address</h4>
-                    <p>123 Sample Street<br>Sample City, SC 12345<br>United States</p>
-                </div>
-            </div>
-            
-            <h3>Business Hours</h3>
-            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
-            Saturday: 10:00 AM - 4:00 PM<br>
-            Sunday: Closed</p>
-        </section>
+        <h3>Our Values</h3>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo.
+        </p>
+        <div id="container-0f16e6f002b86848da701fe4509e73d3"></div>
 
-        <section class="section">
-            <h2>Additional Information</h2>
-            <p>This section contains additional sample content to demonstrate the versatility and structure of our website template. Feel free to customize this content according to your specific needs and requirements.</p>
-            
-            <h3>Technical Specifications</h3>
-            <p>Our development process follows industry best practices and utilizes modern technologies to ensure optimal performance, security, and scalability. We implement responsive design principles to ensure compatibility across all devices and screen sizes.</p>
-            
-            <h3>Client Testimonials</h3>
-            <p>"Working with this team has been an absolute pleasure. They delivered our project on time and exceeded our expectations in every way." - John Smith, CEO of TechCorp</p>
-            <p>"The quality of work and attention to detail is outstanding. I highly recommend their services to anyone looking for professional web development." - Sarah Johnson, Marketing Director</p>
-            
-            <h3>Industry Recognition</h3>
-            <p>We're proud to have received numerous industry awards and recognition for our innovative work and commitment to excellence. Our team continues to push boundaries and set new standards in the digital landscape.</p>
-        </section>
+        <div class="grid">
+          <div class="card">
+            <h4>Innovation</h4>
+            <p>
+              We constantly push boundaries and explore new possibilities in
+              everything we do.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Quality</h4>
+            <p>
+              Every project we undertake is executed with the highest standards
+              of excellence.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Integrity</h4>
+            <p>
+              We maintain the highest ethical standards in all our business
+              relationships.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <h2>Our Services</h2>
+        <p>
+          We offer a comprehensive range of services designed to meet the
+          diverse needs of our clients. Our team of experts is dedicated to
+          delivering exceptional results that exceed expectations.
+        </p>
+
+        <h3>Web Development</h3>
+        <p>
+          Our web development services encompass everything from simple static
+          websites to complex web applications. We use cutting-edge technologies
+          and follow industry best practices to create responsive,
+          user-friendly, and scalable solutions.
+        </p>
+
+        <h3>Mobile App Development</h3>
+        <p>
+          We specialize in creating native and cross-platform mobile
+          applications for iOS and Android. Our mobile solutions are designed
+          with user experience in mind, ensuring intuitive navigation and
+          seamless functionality across all devices.
+        </p>
+
+        <h3>Digital Marketing</h3>
+        <p>
+          Our digital marketing strategies help businesses increase their online
+          presence and reach their target audience effectively. We offer SEO
+          optimization, social media management, content marketing, and PPC
+          advertising services.
+        </p>
+
+        <h3>UI/UX Design</h3>
+        <p>
+          We create beautiful and functional user interfaces that enhance user
+          experience and drive engagement. Our design process focuses on
+          understanding user needs and creating intuitive, accessible, and
+          visually appealing designs.
+        </p>
+      </section>
+
+      <section id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <p>
+          Explore our diverse portfolio of successful projects that showcase our
+          expertise and creativity. Each project represents our commitment to
+          excellence and innovation.
+        </p>
+
+        <h3>Featured Projects</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>E-commerce Platform</h4>
+            <p>
+              A comprehensive online shopping platform with advanced features
+              including inventory management, payment processing, and customer
+              analytics.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Healthcare Management System</h4>
+            <p>
+              A secure and efficient system for managing patient records,
+              appointments, and medical billing with HIPAA compliance.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Educational Learning Platform</h4>
+            <p>
+              An interactive learning management system that provides
+              personalized education experiences for students of all ages.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Financial Dashboard</h4>
+            <p>
+              A real-time financial analytics dashboard that helps businesses
+              make informed decisions with comprehensive data visualization.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Social Media App</h4>
+            <p>
+              A feature-rich social networking application with real-time
+              messaging, content sharing, and community building tools.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Inventory Management System</h4>
+            <p>
+              An automated inventory tracking system that optimizes stock levels
+              and reduces operational costs for retail businesses.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <script type="text/javascript">
+        atOptions = {
+          key: "15e3f9366eaf0cc1179f8905866498d6",
+          format: "iframe",
+          height: 90,
+          width: 728,
+          params: {},
+        };
+      </script>
+      <script
+        type="text/javascript"
+        src="//www.highperformanceformat.com/15e3f9366eaf0cc1179f8905866498d6/invoke.js"
+      ></script>
+
+      <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>
+          Ready to start your next project? Get in touch with us today to
+          discuss your requirements and learn how we can help bring your vision
+          to life.
+        </p>
+
+        <h3>Get In Touch</h3>
+        <p>
+          We're here to help and answer any questions you might have. We look
+          forward to hearing from you and would love to discuss how we can work
+          together to achieve your goals.
+        </p>
+
+        <h3>Contact Information</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Email</h4>
+            <p>info@samplewebsite.com</p>
+          </div>
+          <div class="card">
+            <h4>Phone</h4>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="card">
+            <h4>Address</h4>
+            <p>
+              123 Sample Street<br />Sample City, SC 12345<br />United States
+            </p>
+          </div>
+        </div>
+
+        <h3>Business Hours</h3>
+        <p>
+          Monday - Friday: 9:00 AM - 6:00 PM<br />
+          Saturday: 10:00 AM - 4:00 PM<br />
+          Sunday: Closed
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Additional Information</h2>
+        <p>
+          This section contains additional sample content to demonstrate the
+          versatility and structure of our website template. Feel free to
+          customize this content according to your specific needs and
+          requirements.
+        </p>
+
+        <h3>Technical Specifications</h3>
+        <p>
+          Our development process follows industry best practices and utilizes
+          modern technologies to ensure optimal performance, security, and
+          scalability. We implement responsive design principles to ensure
+          compatibility across all devices and screen sizes.
+        </p>
+
+        <h3>Client Testimonials</h3>
+        <p>
+          "Working with this team has been an absolute pleasure. They delivered
+          our project on time and exceeded our expectations in every way." -
+          John Smith, CEO of TechCorp
+        </p>
+        <p>
+          "The quality of work and attention to detail is outstanding. I highly
+          recommend their services to anyone looking for professional web
+          development." - Sarah Johnson, Marketing Director
+        </p>
+
+        <h3>Industry Recognition</h3>
+        <p>
+          We're proud to have received numerous industry awards and recognition
+          for our innovative work and commitment to excellence. Our team
+          continues to push boundaries and set new standards in the digital
+          landscape.
+        </p>
+      </section>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2024 Sample Website. All rights reserved. | Designed with ❤️ for demonstration purposes</p>
+      <p>
+        &copy; 2024 Sample Website. All rights reserved. | Designed with ❤️ for
+        demonstration purposes
+      </p>
     </footer>
-</body>
+    <script
+      type="text/javascript"
+      src="//pl27467528.profitableratecpm.com/cf/a6/8b/cfa68b39dfc7e71533c5535c14bd8272.js"
+    ></script>
+  </body>
 </html>
