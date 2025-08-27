@@ -4,6 +4,10 @@
     "projects": [
       { "name": "tanos.is-a.dev", "url": "#" },
       { "name": "tanos.fm", "url": "../fm" },
+      {
+        "name": "npmjs reddit scraper",
+        "url": "https://www.npmjs.com/package/@tanosshi/reddit-scraper"
+      },
       { "name": "PASTE", "url": "https://tanosshi.github.io/paste" },
       { "name": "What To Code", "url": "../project/whattocode/" }
     ]
