@@ -3,9 +3,9 @@
     "category": "QUALITY",
     "projects": [
       { "name": "tanos.is-a.dev", "url": "#" },
+      { "name": "tanos.fm", "url": "../fm" },
       { "name": "PASTE", "url": "https://tanosshi.github.io/paste" },
-      { "name": "What To Code", "url": "../project/whattocode/" },
-      { "name": "tanos.fm", "url": "../fm" }
+      { "name": "What To Code", "url": "../project/whattocode/" }
     ]
   },
   {

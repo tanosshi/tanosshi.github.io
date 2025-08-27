@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const $home = $("#home");
+const $bgblur = $("#bgblur");
 const $txtprj = $("#txtprj");
 const $projects = $("#projects");
 const $overlay = $("#overlay");
@@ -142,6 +143,9 @@ function projects() {
     filter: "blur(18px)",
     transform: "scale(0.95)",
   });
+  $bgblur.css({
+    opacity: "0",
+  });
 
   $txtprj.css({
     opacity: "0",
@@ -158,6 +162,12 @@ function projects() {
         opacity: "0",
         transform: "translateY(20px)",
       });
+      $bgblur.animate(
+        {
+          opacity: "1",
+        },
+        300
+      );
 
       $projects[0].offsetHeight;
 
