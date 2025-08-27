@@ -1,66 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>tanos.fm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        @font-face {
-            font-family: nfont;
-            src: url(../css/fonts/SFProDisplay-Regular.ttf);
-        }
+      @font-face {
+        font-family: nfont;
+        src: url(../css/fonts/SFProDisplay-Regular.ttf);
+      }
 
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            border: 0;
-            overflow: hidden;
-        }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+      }
 
-        body {
-            width: 100vw;
-            height: 100vh;
-            background: #fff;
-        }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+      }
 
-        iframe {
-            border: none;
-            width: 100vw;
-            height: 100vh;
-            display: block;
-        }
+      iframe {
+        border: none;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+      }
 
-        .demo-banner {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-family: nfont, sans-serif;
-            z-index: 1000;
-            opacity: 0.92;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
+      .demo-banner {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        width: 60%;
+        transform: translateX(-50%);
+        background: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-size: 2.3vmin;
+        font-family: nfont, sans-serif;
+        z-index: 1000;
+        opacity: 0.42;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.688);
+        text-align: center;
+      }
 
-        a {
-            cursor: pointer;
-        }
+      a {
+        cursor: pointer;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="demo-banner">
-        THIS IS ONLY AN UI DEMO, THE REAL THING ISN'T OUT YET, CHECK OUT THE <a
-            onclick="window.location.href='https://github.com/tanosshi/tanos.fm'">GITHUB REPO</a> TO RUN IT YOURSELF
+      THIS IS ONLY AN UI DEMO, THE REAL THING ISN'T OUT YET, CHECK OUT THE
+      <a onclick="window.location.href='https://github.com/tanosshi/tanos.fm'"
+        >GITHUB REPO</a
+      >
+      TO RUN IT YOURSELF
     </div>
-    <iframe src="https://moonlit-malasada-a5e63c.netlify.app/" title="tanos.fm"></iframe>
-</body>
+    <iframe
+      src="https://moonlit-malasada-a5e63c.netlify.app/"
+      title="tanos.fm"
+    ></iframe>
+  </body>
 
+  <script>
+    const demoBanner = document.querySelector(".demo-banner");
+    const updateBannerText = () => {
+      if (window.innerWidth < 400) {
+        demoBanner.innerHTML =
+          "THIS IS ONLY AN UI DEMO, CHECK <a onclick=\"window.location.href='https://github.com/tanosshi/tanos.fm'\">GITHUB</a>";
+      } else {
+        demoBanner.innerHTML =
+          "THIS IS ONLY AN UI DEMO, THE REAL THING ISN'T OUT YET, CHECK OUT THE <a onclick=\"window.location.href='https://github.com/tanosshi/tanos.fm'\">GITHUB REPO</a> TO RUN IT YOURSELF";
+      }
+      if (window.innerWidth > 600) {
+        demoBanner.style.fontSize = "1.7vmin";
+      }
+    };
+
+    window.addEventListener("resize", updateBannerText);
+    updateBannerText();
+  </script>
 </html>
