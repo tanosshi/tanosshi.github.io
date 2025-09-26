@@ -3,3 +3,7 @@ node_modules/.bin/detect-libc
 /node_modules
 js/plugins.js
 /chat
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/tanosshi.github.io.iml
+.idea/modules.xml

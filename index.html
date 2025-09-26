@@ -251,7 +251,11 @@
 
         <div class="home-content__line"></div>
 
-        <div class="row home-copyright lastplayed lastfm">
+        <!-- disable for now lol dont remove or else the js will reload nonstop -->
+        <div
+          class="row home-copyright lastplayed lastfm"
+          style="display: none !important"
+        >
           <p id="titledFm" ondblclick="alert('hii')">
             tanos is currently listening to
             <a onclick="updateLastFM('direct')" id="fmPlaying">...</a>
