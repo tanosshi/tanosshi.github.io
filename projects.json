@@ -33,6 +33,7 @@
   {
     "category": "BASICS",
     "projects": [
+      { "name": "ARMSX2 page", "url": "https://armsx2.net" },
       { "name": "weather", "url": "../project/weather" },
       {
         "name": "iOSFox (Firefox Extension)",
