@@ -6,7 +6,7 @@ var finalDate;
   doc.setAttribute("data-useragent", navigator.userAgent);
 
   function ssFinalCountdown() {
-    var finalDate = new Date("February 6, 2026 00:00:01").getTime();
+    var finalDate = new Date("February 6, 2027 00:00:01").getTime();
     $(".home-content__clock")
       .countdown(finalDate)
       .on("update.countdown finish.countdown", function (event) {
